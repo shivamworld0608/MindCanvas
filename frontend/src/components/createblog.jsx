@@ -13,28 +13,36 @@ const CreateBlog = ({ onClose }) => {
     category: categories[0],
   });
 
+  const [charCount, setCharCount] = useState({
+    title: 0,
+    description: 0,
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === "title" || name === "description") {
+      setCharCount({ ...charCount, [name]: value.length });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await toast.promise(
-          axios.post(`${import.meta.env.REACT_APP_BASE_URL}/blog/create`, formData, { withCredentials: true }),
-          {
-            loading: "Posting...",
-            success: "Blog created successfully!",
-            error: "Failed to create Blog",
-          }
-        );
-    
-        onClose();
-        
-      } catch (error) {
-        console.error("Error creating blog post:", error);
-      }
+      await toast.promise(
+        axios.post(`${import.meta.env.REACT_APP_BASE_URL}/blog/create`, formData, { withCredentials: true }),
+        {
+          loading: "Posting...",
+          success: "Blog created successfully!",
+          error: "Failed to create Blog",
+        }
+      );
+
+      onClose();
+    } catch (error) {
+      console.error("Error creating blog post:", error);
+    }
   };
 
   return (
@@ -54,7 +62,9 @@ const CreateBlog = ({ onClose }) => {
               onChange={handleChange}
               className="w-full border border-gray-300 p-2 rounded-lg"
               required
+              maxLength={70}
             />
+            <p className="text-gray-600 mt-2 text-right text-xs">{formData.title.length}/70</p>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">Description</label>
@@ -64,7 +74,9 @@ const CreateBlog = ({ onClose }) => {
               onChange={handleChange}
               className="w-full border border-gray-300 p-2 rounded-lg"
               required
+              maxLength={250}
             ></textarea>
+            <p className="text-gray-600 mt-2 text-right text-xs">{formData.description.length}/250</p>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">Link</label>

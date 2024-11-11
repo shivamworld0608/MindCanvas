@@ -3,6 +3,7 @@ import { CalendarDays, UserCircle } from 'lucide-react';
 
 const BlogCard = ({ blog }) => {
   const { title, description, author_mail, link, date } = blog;
+  console.log(date);
 
   return (
     <div className="  relative bg-white shadow-lg rounded-lg p-6 w-full h-[300px] min-w-[320px] max-w-xs mx-auto mb-6 border border-gray-200">
@@ -15,11 +16,18 @@ const BlogCard = ({ blog }) => {
         <div className="flex flex-col ">
           <div className="flex mb-2 ">
             <UserCircle className="mr-1  text-custom-red" /> 
-            <span>{author_mail}</span>
+            <span className="text-gray-500">{author_mail}</span>
           </div>
           <div className="flex ">
           <CalendarDays className="mr-1 text-custom-red" />
-            <span>{new Date(date.$date).toLocaleDateString()}</span>
+          <span className="text-gray-500">
+    {new Date(date).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    })}
+  </span>
+
           </div>
         </div>
         
@@ -29,7 +37,7 @@ const BlogCard = ({ blog }) => {
           rel="noopener noreferrer" 
           className="text-blue-500 font-semibold hover:text-blue-600"
         >
-          Open Link
+          Read
         </a>
       </div>
       </div>

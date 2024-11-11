@@ -1,13 +1,20 @@
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../Redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import Login from './login';
 
 const MenuPopup = ({ isOpen, onClose, authUser, userData }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isloginOpen, setIsloginOpen] = useState(false);
+
+  const toggleLogin = () => {
+    setIsloginOpen(!isloginOpen);
+    }
 
   const handleLogout = async() => {
     try {
@@ -46,7 +53,7 @@ const MenuPopup = ({ isOpen, onClose, authUser, userData }) => {
       ) : (
         <div className="space-y-2">
           <button
-            onClick={() => navigate("/")}
+            onClick={toggleLogin}
             className="w-full text-left py-2 px-3 hover:bg-neutral-100 rounded-md"
           >
             Login
@@ -59,6 +66,21 @@ const MenuPopup = ({ isOpen, onClose, authUser, userData }) => {
           </button>
         </div>
       )}
+
+{isloginOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <button
+              onClick={toggleLogin}
+              className="text-gray-500 hover:text-gray-700 absolute top-4 right-4"
+            >
+              &times;
+            </button>
+            <Login closeModal={toggleLogin} />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
