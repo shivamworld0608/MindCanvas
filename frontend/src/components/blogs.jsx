@@ -20,7 +20,7 @@ const BlogPage = () => {
   const categoriesRef = useRef(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/blog/get/${activeCategory}`, { withCredentials: true })
+    axios.get(`${import.meta.env.REACT_APP_BASE_URL}/blog/get/${activeCategory}`, { withCredentials: true })
       .then(response => setBlogs(response.data))
       .catch(error =>{
         toast.error(`Failed to ${activeCategory} blogs!`);

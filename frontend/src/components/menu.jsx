@@ -11,7 +11,7 @@ const MenuPopup = ({ isOpen, onClose, authUser, userData }) => {
 
   const handleLogout = async() => {
     try {
-        await axios.post("http://localhost:5000/auth/logout", {}, { withCredentials: true });
+        await axios.post(`${import.meta.env.REACT_APP_BASE_URL}/auth/logout`, {}, { withCredentials: true });
         dispatch(logout());
         toast.success("Logout successful!");
         navigate("/");

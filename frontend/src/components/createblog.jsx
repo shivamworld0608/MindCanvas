@@ -22,7 +22,7 @@ const CreateBlog = ({ onClose }) => {
     e.preventDefault();
     try {
         await toast.promise(
-          axios.post("http://localhost:5000/blog/create", formData, { withCredentials: true }),
+          axios.post(`${import.meta.env.REACT_APP_BASE_URL}/blog/create`, formData, { withCredentials: true }),
           {
             loading: "Posting...",
             success: "Blog created successfully!",

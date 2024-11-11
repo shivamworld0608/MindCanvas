@@ -42,7 +42,7 @@ const Login = ({ closeModal }) => {
     if (!valid) return;
     try {
       await toast.promise(
-        axios.post("http://localhost:5000/auth/login", { email, password }, { withCredentials: true }),
+        axios.post(`${import.meta.env.REACT_APP_BASE_URL}/auth/login`, { email, password }, { withCredentials: true }),
         {
           loading: 'Logging in...',
           success: "Login successful!",

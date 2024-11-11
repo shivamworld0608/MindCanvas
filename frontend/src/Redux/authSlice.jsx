@@ -24,7 +24,7 @@ export const { setAuthUser, logout } = authSlice.actions;
 
 export const checkAuth = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:5000/check-auth', {
+    const response = await axios.get(`${import.meta.env.REACT_APP_BASE_URL}/check-auth`, {
       withCredentials: true,
     });
     if (response.ok) {
