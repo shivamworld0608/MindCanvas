@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkAuth } from './Redux/authSlice';
 import Login from './Pages/Landing';
 import Blog from './Pages/Blog';
-import { PacmanLoader } from 'react-spinners';
 
 const App = () => {
   const dispatch = useDispatch();

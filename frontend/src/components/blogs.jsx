@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import BlogCard from './BlogCard';
+import BlogCard from './blogcard';
 import { toast } from 'react-hot-toast';
 import { Ambulance, Clapperboard, Component, CpuIcon, FlaskConical, Handshake, Trophy, ChevronRight, ChevronLeft } from 'lucide-react';
 
