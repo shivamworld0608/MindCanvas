@@ -11,7 +11,7 @@ const BlogCard = ({ blog }) => {
       <p className="text-gray-700 mb-4 text-ellipsis overflow-hidden">{description}</p>
 
       <div className='absolute bottom-4'>
-      <div className="border-t-2 border-orange-500 my-4 w-full min-w-[270px]"></div>
+      <div className="border-t-2 border-custom-red my-4 w-full min-w-[270px]"></div>
       <div className="  flex justify-between items-center text-sm text-gray-500 space-y-4">
         <div className="flex flex-col ">
           <div className="flex mb-2 ">
