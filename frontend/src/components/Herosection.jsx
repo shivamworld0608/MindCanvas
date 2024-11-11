@@ -37,7 +37,7 @@ const HeroSection = () => {
 
       {isLoginOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+          
             <button
               onClick={closeLoginModal}
               className="text-gray-500 hover:text-gray-700 absolute top-4 right-4"
@@ -45,7 +45,7 @@ const HeroSection = () => {
               &times;
             </button>
             <Login closeModal={closeLoginModal} />
-          </div>
+          
         </div>
       )}
     </div>

@@ -37,7 +37,7 @@ const BlogPage = () => {
 
   return (
     <div className="relative  ">
-    <div className="relative mt-2 mb-6 sticky top-[60px] w-screen md:top-[74px] z-40">
+    <div className="relative mt-2 mb-6 sticky top-[70px] w-screen md:top-[73px] z-40">
         <button
           onClick={() => scrollCategories('left')}
           className="absolute left-2   md:left-8 top-1/2 transform -translate-y-1/2 bg-white border-2 border-black text-black p-2 rounded-full z-30 shadow-md"
@@ -45,7 +45,7 @@ const BlogPage = () => {
           <ChevronLeft size={20} />
         </button>
         <div
-          className=" z-20 bg-white flex space-x-6 overflow-x-auto  justify-start md:justify-center items-center mt-2 mb-6 shadow-md scrollbar-hide py-2 px-8"
+          className=" z-20 bg-white flex space-x-6 overflow-x-auto  justify-start md:justify-center items-center mt-2 mb-6 shadow-md scrollbar-hide py-2 "
           ref={categoriesRef}
         >
           {categories.map((category, index) => (
