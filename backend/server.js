@@ -9,7 +9,7 @@ import blogroutes from "./routes/blog.js";
 
 const app=express();
 
-app.use(cors({credentials:true,origin:"http://localhost:5173"}));
+app.use(cors({credentials:true,origin: process.env.CLIENT_URL}));
 
 dotenv.config();
 app.use(cookieParser());
