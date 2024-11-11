@@ -62,9 +62,9 @@ const CreateBlog = ({ onClose }) => {
               onChange={handleChange}
               className="w-full border border-gray-300 p-2 rounded-lg"
               required
-              maxLength={70}
+              maxLength={50}
             />
-            <p className="text-gray-600 mt-2 text-right text-xs">{formData.title.length}/70</p>
+            <p className="text-gray-600 mt-2 text-right text-xs">{formData.title.length}/50</p>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">Description</label>
@@ -74,9 +74,9 @@ const CreateBlog = ({ onClose }) => {
               onChange={handleChange}
               className="w-full border border-gray-300 p-2 rounded-lg"
               required
-              maxLength={250}
+              maxLength={120}
             ></textarea>
-            <p className="text-gray-600 mt-2 text-right text-xs">{formData.description.length}/250</p>
+            <p className="text-gray-600 mt-2 text-right text-xs">{formData.description.length}/120</p>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">Link</label>
