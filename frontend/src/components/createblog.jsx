@@ -30,7 +30,6 @@ const CreateBlog = ({ onClose }) => {
           }
         );
     
-        // Close the modal if the blog post was successfully created
         onClose();
         
       } catch (error) {

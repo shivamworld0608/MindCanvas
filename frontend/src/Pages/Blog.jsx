@@ -6,11 +6,13 @@ import Footer from "../components/footer";
 const Blog = () => {
   return (
     <>
+    <div className="overflow-hidden ">
        <Navbar />
       <div className=" mx-auto ">
         <Blogs />
       </div>
         <Footer />
+        </div>
     </>
   );
 };

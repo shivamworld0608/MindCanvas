@@ -11,9 +11,7 @@ const App = () => {
   const { authUser } = useSelector((state) => state.auth);
 
   useEffect(() => {
-     if(!authUser){
          dispatch(checkAuth());
-     }
   }, [dispatch]);
   
   return (

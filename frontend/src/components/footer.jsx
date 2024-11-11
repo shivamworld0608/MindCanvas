@@ -26,7 +26,7 @@ const Footer = () => {
               <li key={index}>
                 <a
                   href={link.href}
-                  className="text-neutral-600 hover:text-custom-red"
+              className="text-neutral-600 hover:text-custom-red"
                 >
                   {link.text}
                 </a>
@@ -51,8 +51,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-neutral-700 mt-8">
-          <p className="text-sm text-neutral-600 pt-2 mt-4 lg:mb-0">
-            © 2023 MindCanvas, Inc. All rights reserved.
+          <p className="text-sm text-neutral-600 pt-2 mt-4 mb-[-20px]">
+            © 2024 MindCanvas, Inc. All rights reserved.
           </p>
       </div>
     </footer>

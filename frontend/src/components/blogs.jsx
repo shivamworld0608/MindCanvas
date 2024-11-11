@@ -36,11 +36,11 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="relative container mx-auto">
-      <div className="relative mt-2 mb-6 sticky top-[60px]   md:top-[74px]">
+    <div className="relative  ">
+    <div className="relative mt-2 mb-6 sticky top-[60px] w-screen md:top-[74px] z-40">
         <button
           onClick={() => scrollCategories('left')}
-          className="absolute left-2  md:left-8 top-1/2 transform -translate-y-1/2 bg-white border-2 border-black text-black p-2 rounded-full z-30 shadow-md"
+          className="absolute left-2   md:left-8 top-1/2 transform -translate-y-1/2 bg-white border-2 border-black text-black p-2 rounded-full z-30 shadow-md"
         >
           <ChevronLeft size={20} />
         </button>
@@ -71,7 +71,7 @@ const BlogPage = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {blogs.map((blog, index) => (
           <BlogCard key={index} blog={blog} />
         ))}

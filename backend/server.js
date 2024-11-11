@@ -9,9 +9,9 @@ import blogroutes from "./routes/blog.js";
 
 const app=express();
 
+dotenv.config();
 app.use(cors({credentials:true,origin: process.env.CLIENT_URL}));
 
-dotenv.config();
 app.use(cookieParser());
 app.use(express.json());
 
